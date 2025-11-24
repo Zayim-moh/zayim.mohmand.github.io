@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "lang-af": "Afghan Persian (native speaker)",
             "lang-en": "English (Intermediate speaker)",
             "title-ref": "References",
-            "ref1-role": "Senior Developer @ Company",
-            "ref2-role": "Project Manager @ Town Hall",
+            "ref1-role": "Programming professor",
+            "ref2-role": "DataBase professor",
             "title-contact": "Contact",
             "contact-desc": "An idea? A project? Let's discuss.",
             "lbl-name": "Name",
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "lang-af": "Persan Afghan (langue maternelle)",
             "lang-en": "Anglais (intermédiaire)",
             "title-ref": "Références",
-            "ref1-role": "Développeur Senior @ Entreprise",
-            "ref2-role": "Chef de Projet @ Mairie",
+            "ref1-role": "Professeur de programmation",
+            "ref2-role": "Professeur de Base de données",
             "title-contact": "Contact",
             "contact-desc": "Une idée ? Un projet ? Discutons-en.",
             "lbl-name": "Nom",
@@ -230,4 +230,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener("submit", handleSubmit);
     }
+
 });
