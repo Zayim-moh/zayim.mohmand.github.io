@@ -276,20 +276,67 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE MOBILE (CORRIGÉ) --- */
 @media (max-width: 768px) {
-    .hero-content { flex-direction: column-reverse; text-align: center; }
-    .img-wrapper { width: 220px; height: 220px; margin-bottom: 40px; }
-    .text-zone h1 { font-size: 2.8rem; }
     
-    .nav-links {
-        position: absolute; right: 0; top: 80px; height: 100vh; background: var(--bg-alt);
-        flex-direction: column; align-items: center; width: 70%;
-        transform: translateX(100%); transition: 0.4s ease-in; 
-        border-left: 1px solid rgba(255,255,255,0.1); padding-top: 50px;
+    /* 1. On libère la hauteur pour éviter l'écrasement */
+    .hero-section {
+        height: auto;          /* S'adapte au contenu */
+        min-height: 100vh;     /* Au minimum la taille de l'écran */
+        padding-top: 120px;    /* Plus d'espace sous la navbar */
+        padding-bottom: 60px;
+        display: flex;
+        align-items: center;
     }
+
+    /* 2. On remet l'ordre : Texte en haut, Image en bas */
+    .hero-content {
+        flex-direction: column; /* Enlève le 'reverse' qui mettait la photo en haut */
+        text-align: center;
+        gap: 50px; /* Espace aéré entre le texte et la photo */
+    }
+
+    .text-zone {
+        order: 1; /* Le texte s'affiche en premier */
+    }
+
+    .image-zone {
+        order: 2; /* L'image s'affiche en deuxième */
+        margin-bottom: 0; /* On nettoie les marges */
+    }
+
+    /* 3. Ajustement de la taille de l'image sur mobile */
+    .img-wrapper {
+        width: 260px;
+        height: 260px;
+        margin: 0 auto;
+        border-width: 3px;
+    }
+
+    .text-zone h1 {
+        font-size: 2.5rem; /* Titre un peu plus petit pour mobile */
+    }
+
+    /* 4. Menu Burger Plein Écran pour plus de propreté */
+    .nav-links {
+        position: fixed; /* Fixed pour ne pas bouger au scroll */
+        right: 0; top: 80px; 
+        height: calc(100vh - 80px); 
+        background: var(--bg-alt);
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: flex-start;
+        gap: 40px;
+        width: 100%; /* Prend toute la largeur */
+        transform: translateX(100%); 
+        transition: 0.4s ease-in-out; 
+        border-left: none; 
+        padding-top: 50px;
+    }
+
     .nav-active { transform: translateX(0%); }
     .burger { display: block; }
+    
     .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
     .toggle .line2 { opacity: 0; }
     .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
